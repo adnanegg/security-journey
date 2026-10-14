@@ -1,9 +1,9 @@
 # Security Journey
-**Stage:** 0 Foundations | **Day:** 0 | **Hours:** 0 | **Streak:** 0
+**Stage 0 · 1/23 sessions · Overall 1/~182 (0.5%) · Gates passed 0/4**
 Goal: junior-hireable web/AppSec by late 2027, then specialize.
 
 ## Rules
-- 2h/day on weekdays (3rd hour = bonus), weekends off
+- Study in sessions (1 session = 1 mission from plan/); target 4+ sessions/week
 - No new stage until its gate is passed (results go in `gates/`)
 - Hints last: 20 min of real attempt before any hint or walkthrough
 - Never commit secrets, lab flags/passwords, or write-ups of active HTB machines

@@ -1,6 +1,6 @@
 # Stage 0: Foundations (4 weeks, 20 days, ~40h)
 
-Daily format: 15 min recall (no notes), 75 min lab, 30 min log + commit (`log/YYYY-MM-DD.md`).
+Daily format: 15 min recall (no notes), 75 min lab, 30 min log + commit (`log/session-NN.md`).
 Skim anything the diagnostic shows you already know. Only test machines you own.
 
 ## Week 1: Linux and shell
