@@ -16,3 +16,17 @@ What I didn't know: that `strings` is useless here (only gibberish), that `file`
 Stuck: `gzip -d` failed even after I renamed the file. What fixed it: rename the file extension to the proper suffix ;
 Method I worked out: run `file`, get the right suffix, rename, decompress with the matching tool, repeat until it's plain ASCII text. It took a lot of rounds.
 Hints used: yes, 3 hints (use `file`, the BZh header, rename for the suffix).
+
+## Bandit 13 -> 14
+Goal: the level gives an SSH private key instead of a password, to log in as the next user.
+Commands: copied the key text, `exit`, `nano` to save it as a key file on my machine, `chmod` to remove group/others permissions: chmod 700 banditkey, then `ssh` with the key file: ssh -i ./banditkey.
+What I learned: ssh key login (private key instead of a password), and ssh refuses a key that group or others can read. I only found this out when it warned me.
+Stuck: nothing serious, the level was easy.
+Hints used: none, I read the level's own hint.
+
+## Bandit 13 -> 14
+Goal: the level gives an SSH private key instead of a password, to log in as the next user.
+Commands: copied the key text, `exit`, `nano` to save it as a key file on my machine, `chmod` to remove group/others permissions: chmod 700 banditkey, then `ssh` with the key file: ssh -i ./banditkey.
+What I learned: ssh key login (private key instead of a password), and ssh refuses a key that group or others can read. I only found this out when it warned me.
+Stuck: nothing serious, the level was easy.
+Hints used: none, I read the level's own hint.
