@@ -1,5 +1,5 @@
 # Security Journey
-**Stage 0 · 1/23 sessions · Overall 1/~182 (0.5%) · Gates passed 0/4**
+**Stage 0 · 2/23 sessions · Overall 2/~182 (1%) · Gates passed 0/4**
 Goal: junior-hireable web/AppSec by late 2027, then specialize.
 
 ## Rules
