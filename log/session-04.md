@@ -20,19 +20,6 @@ Commands: `ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"`
 What I learned: ssh can run a single command on the server and print the output without opening an interactive shell, which gets around the .bashrc kick-out.
 Time: 4:30. Stuck: logging in. Hints used: asked ChatGPT whether ssh can run commands without connecting, and it gave me the syntax.
 
-## Bandit 18 -> 19
-Goal: read the `readme` file, but logging in kicks me out because .bashrc was modified to log me out.
-Commands: `ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"`
-What I learned: ssh can run a single command on the server and print the output without opening an interactive shell, which gets around the .bashrc kick-out.
-Time: 4:30. Stuck: logging in. Hints used: asked ChatGPT whether ssh can run commands without connecting, and it gave me the syntax.
-
-## Bandit 19 -> 20
-Goal: use the setuid binary `bandit20-do` to read /etc/bandit_pass/bandit20.
-Commands: `ls -la` (saw I only have read and execute on the binary, no write), then `./bandit20-do cat /etc/bandit_pass/bandit20`
-What I tried first: editing the binary or writing a script, which failed because I can't write to it.
-What I learned: a setuid program runs with its owner's privileges, so any command it launches (here `cat`) also reads files as the owner.
-Time: 9 min. Hints used: none.
-
 ## Bandit 19 -> 20
 Goal: use the setuid binary `bandit20-do` to read /etc/bandit_pass/bandit20.
 Commands: `ls -la` (saw I only have read and execute on the binary, no write), then `./bandit20-do cat /etc/bandit_pass/bandit20`

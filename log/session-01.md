@@ -1,5 +1,5 @@
-# YYYY-MM-DD
-- Hours:
+# Session 1 (2026-10-14)
+- Hours: I don't remember
 - Did:
  1. learned how to ssh to a server using <username>@<remote> -p {port} (password is requested later)
  2. easily read the first password using cat from a readme file 

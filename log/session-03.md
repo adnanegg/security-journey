@@ -1,5 +1,5 @@
 # Session 3 (started 2026-10-18)
-- Hours: 
+- Hours: I don't remember
 
 ## Bandit 11 -> 12
 Goal: decode text in data.txt that was rotated by 13 positions (ROT13) to get the password.
@@ -24,13 +24,6 @@ What I learned: ssh key login (private key instead of a password), and ssh refus
 Stuck: nothing serious, the level was easy.
 Hints used: none, I read the level's own hint.
 
-## Bandit 13 -> 14
-Goal: the level gives an SSH private key instead of a password, to log in as the next user.
-Commands: copied the key text, `exit`, `nano` to save it as a key file on my machine, `chmod` to remove group/others permissions: chmod 700 banditkey, then `ssh` with the key file: ssh -i ./banditkey.
-What I learned: ssh key login (private key instead of a password), and ssh refuses a key that group or others can read. I only found this out when it warned me.
-Stuck: nothing serious, the level was easy.
-Hints used: none, I read the level's own hint.
-
 ## Bandit 14 -> 15
 Goal: submit the current level's password to port 30000 on localhost to get the next password.
 First attempts: `nc localhost 30000` and typed random input, which only returned "password incorrect". I found a public key in `~/.ssh/authorized_keys` (comment rudy@localhost) and wrongly thought the SSH key I used to log in was the "current level password". ChatGPT said a public key alone can't give access, which was true but didn't solve it.
@@ -39,10 +32,14 @@ Stuck: 20+ min on this.
 Hints used: yes, I got the password file location from a hint.
 Final command that worked: nc localhost 30000 
 
-## Bandit 14 -> 15
-Goal: submit the current level's password to port 30000 on localhost to get the next password.
-First attempts: `nc localhost 30000` and typed random input, which only returned "password incorrect". I found a public key in `~/.ssh/authorized_keys` (comment rudy@localhost) and wrongly thought the SSH key I used to log in was the "current level password". ChatGPT said a public key alone can't give access, which was true but didn't solve it.
-What I didn't know: an SSH key and a level password are two separate credentials, and I didn't know where the level's own password is stored. The path was in the previous level's goal text, which I'd missed.
-Stuck: 20+ min on this.
-Hints used: yes, I got the password file location from a hint.
-Final command that worked: nc localhost 30000 
+## Bandit 15 -> 16
+Goal: same idea as level 14, but submit the current password over an encrypted TLS connection.
+Commands: `openssl s_client --connect localhost:30001`, then I typed the password I got from `/etc/bandit_pass/bandit15`.
+What I learned: `openssl s_client` is the TLS version of `nc`. After connecting it prints certificate and handshake output, then I send the password the same way as before.
+Stuck/hints: none reported.
+
+## Bandit 15 -> 16
+Goal: same idea as level 14, but submit the current password over an encrypted TLS connection.
+Commands: `openssl s_client -connect localhost:30001`, then I typed the password I got from `/etc/bandit_pass/bandit15`.
+What I learned: `openssl s_client` is the TLS version of `nc`. After connecting it prints certificate and handshake output, then I send the password the same way as before.
+Stuck/hints: none.
