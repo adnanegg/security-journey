@@ -38,8 +38,3 @@ Commands: `openssl s_client --connect localhost:30001`, then I typed the passwor
 What I learned: `openssl s_client` is the TLS version of `nc`. After connecting it prints certificate and handshake output, then I send the password the same way as before.
 Stuck/hints: none reported.
 
-## Bandit 15 -> 16
-Goal: same idea as level 14, but submit the current password over an encrypted TLS connection.
-Commands: `openssl s_client -connect localhost:30001`, then I typed the password I got from `/etc/bandit_pass/bandit15`.
-What I learned: `openssl s_client` is the TLS version of `nc`. After connecting it prints certificate and handshake output, then I send the password the same way as before.
-Stuck/hints: none.
